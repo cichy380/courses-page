@@ -12,6 +12,8 @@ import { ServicesComponent } from './components/services/services.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AngularFirstAppComponent } from './components/courses/components/angular-first-app/angular-first-app.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ServicesComponent,
     CoursesComponent,
     ContactComponent,
+    AngularFirstAppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

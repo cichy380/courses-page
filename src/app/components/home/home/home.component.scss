@@ -1,0 +1,45 @@
+@import "../../../../styles/abstracts/variables";
+
+.app__sidenav {
+  width: 290px;
+  max-width: 100%;
+}
+
+.logo {
+  display: inline-block;
+  font-family: $font-family-logo;
+  font-size: 30px;
+  background: linear-gradient(45deg, map-get($mat-purple, 200), map-get($mat-purple, 800));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__nav {
+  text-transform: uppercase;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bolder;
+
+  a {
+    margin-left: map-get($spacers, 3);
+    margin-right: map-get($spacers, 3);
+    text-decoration: none;
+    color: $body-color;
+    cursor: pointer;
+  }
+}
+
+.header__phone {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bolder;
+}
+
+.footer {
+  background: linear-gradient(45deg, map-get($mat-gray, 50), map-get($mat-gray, 200));
+  font-size: $font-size-sm;
+}
+
+.footer__logo {
+  background: linear-gradient(45deg, map-get($mat-gray, 200), map-get($mat-gray, 500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
