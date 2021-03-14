@@ -1,5 +1,32 @@
 @import "../../../../../styles/abstracts/variables";
+@import "~bootstrap/scss/mixins";
 
+.course__heading {
+  font-size: $h4-font-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $h3-font-size;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $h2-font-size;
+  }
+}
+
+.course__figure {
+  display: flex;
+  height: 100px;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 72px;
+  background: linear-gradient(45deg, map-get($mat-red, 300), map-get($mat-red, 800));
+}
+
+abbr {
+  text-decoration: underline dotted map-get($mat-gray, 300);
+}
 
 .footer {
   background: linear-gradient(45deg, map-get($mat-gray, 50), map-get($mat-gray, 200));

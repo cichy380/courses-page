@@ -34,6 +34,10 @@
   font-size: $font-size-sm !important;
 }
 
+.font-size-tiny {
+  font-size: $font-size-tiny !important;
+}
+
 .font-size-lg {
   font-size: $font-size-lg !important;
 }
@@ -151,4 +155,16 @@
 
 .heading-color {
   color: $headings-color !important;
+}
+
+.text-inherit {
+  color: inherit !important;
+}
+
+.bg-gradient-light {
+  background: linear-gradient(45deg, map-get($mat-gray, 50), map-get($mat-gray, 100));
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
 }

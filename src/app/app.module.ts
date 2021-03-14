@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularFirstAppComponent } from './components/courses/components/angular-first-app/angular-first-app.component';
 import { HomeComponent } from './components/home/home/home.component';
+import { DialogInfoComponent } from './components/dialog-info/dialog-info.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './components/home/home/home.component';
     ContactComponent,
     AngularFirstAppComponent,
     HomeComponent,
+    DialogInfoComponent,
   ],
   imports: [
     BrowserModule,

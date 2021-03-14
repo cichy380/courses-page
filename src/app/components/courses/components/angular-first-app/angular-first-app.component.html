@@ -1,150 +1,242 @@
 <header class="header">
   <div class="container">
-    <mat-toolbar class="px-0 bg-white position-relative justify-content-center">
-      <button mat-icon-button class="position-absolute left" aria-label="Powrót">
-        <mat-icon>menu</mat-icon>
+    <mat-toolbar class="px-0 mb-2 bg-white position-relative justify-content-center">
+      <button mat-icon-button class="position-absolute left" aria-label="Powrót" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
       </button>
 
-      <h1>Angular - pierwsza aplikacja</h1>
+      <h1 class="course__heading ml-3 ml-sm-0">Angular - pierwsza aplikacja</h1>
     </mat-toolbar>
   </div>
 </header>
 
-katering
-
-<main class="container">
-  <section class="section__header">
-    <p class="section__lead">
-      Poznaj framework Angular oraz technologie mu towarzyszące w praktyce.
+<div class="container">
+  <section class="section__header mb-6">
+    <p class="section__lead mb-5">
+      Poznaj framework Angular w praktyce budując z nami swoją pierwszą aplikację internetową działającą po stronie
+      przeglądarki.
     </p>
     <div class="text-center">
-      <button mat-button>Zapisz się</button>
-      /
-      <button mat-button>Plan szkolenia</button>
+      <button type="button" mat-flat-button class="btn btn_primary" (click)="onClickScrollBtn('form')">
+        Zapisz się
+      </button>
+      <span class="mx-2"></span>
+      <button type="button" mat-flat-button class="btn btn_primary btn_outline" (click)="onClickScrollBtn('plan')">
+        Plan szkolenia
+      </button>
     </div>
   </section>
 
-
   <div class="row">
     <div class="col-md-3">
-      <p>
-        Start: <br>
-        24 maj 2021
-      </p>
-      <p>
-        Czas trwania: <br>
-        21h <span class="text-muted">(3 dni po 7h)</span>
-      </p>
-      <p>
-        Cena: <br>
-        1 600 PLN <span class="text-muted">brutto</span>
-      </p>
-      <hr>
-      <p>
-        Tryb: <br>
-        Szkolenie stacjonarne
-      </p>
-      <p>
-        Lokalizacja: <br>
-        Łódź (adres) - link z Dialog wyjaśniający, że dokładna lokalizacja uzalezniona od ilości uczestników
-      </p>
-      <p>
-        Prowadzący: <br>
-        (O) Marcin Dobroszek
-      </p>
+      <aside class="mb-4 p-3 bg-gradient-light rounded">
+        <figure class="course__figure rounded mb-4">
+          <fa-icon [icon]="faAngular"></fa-icon>
+        </figure>
 
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <h5 class="font-size-sm font-weight-bolder mb-0">Start:</h5>
+            24 maj 2021
+          </li>
+          <li class="mb-3">
+            <h5 class="font-size-sm font-weight-bolder mb-0">Czas trwania:</h5>
+            21h <span class="ml-1 text-muted font-size-sm">(3 dni &times; 7h)</span>
+          </li>
+          <li>
+            <h5 class="font-size-sm font-weight-bolder mb-0">Cena:</h5>
+            1 600 PLN <span class="ml-1 text-muted font-size-sm">brutto</span>
+          </li>
+        </ul>
 
+        <hr>
+
+        <ul class="list-unstyled mb-4">
+          <li class="mb-3">
+            <h5 class="font-size-sm font-weight-bolder mb-0">Tryb:</h5>
+            Szkolenie stacjonarne
+          </li>
+          <li class="mb-3">
+            <h5 class="font-size-sm font-weight-bolder mb-0">Lokalizacja:</h5>
+            Łódź <a (click)="onClickLocationDetailsInfo()" class="ml-1 font-size-sm cursor-pointer">dokładny adres</a>
+          </li>
+          <li class="mb-3">
+            <h5 class="font-size-sm font-weight-bolder mb-1">Prowadzący:</h5>
+            <figure class="d-flex align-items-center mb-0">
+              <img src="./assets/mdobroszek.jpg" alt="" class="img-fluid rounded-circle mr-3" width="38" height="38">
+              <figcaption>
+                <div class="mb-n1">Marcin Dobroszek</div>
+                <div class="font-size-tiny text-uppercase opacity-5">Frontend developer</div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+
+        <button type="button" mat-flat-button class="btn btn_primary w-100" (click)="onClickScrollBtn('form')">
+          Zapisz się
+        </button>
+      </aside>
+
+      <p class="px-md-3 font-size-tiny text-muted">
+        Katering w postaci przerw kawowych (kawa, herbata, ciastka) oraz obiadu jest wliczony w cenę szkolenia.
+      </p>
     </div>
 
     <div class="col-md-9">
-      <h3>Dla kogo</h3>
-      <p>
-        Kurs przeznaczone jest dla osób posiadających podstawową wiedzę w zakresie JavaScript, którzy chcą
-        poszerzyć swoje kompetencje związane z tworzeniem aplikacji internetowych działających po stronie przeglądarki
-        (<abbr title="Single Page Application">SPA</abbr>).</p>
+      <main class="pl-md-3">
+        <section class="py-5">
+          <h3>Dla kogo</h3>
+          <p class="mb-0">
+            Kurs przeznaczone jest dla osób posiadających podstawową wiedzę w zakresie JavaScript, którzy chcą
+            poszerzyć swoje kompetencje związane z tworzeniem aplikacji internetowych (<abbr
+            matTooltip="Single Page Application" data-original-title="Single Page Application">SPA</abbr>).
+          </p>
+        </section>
 
-      <hr class="my-5">
+        <hr>
 
-      <h3>Wymagania</h3>
-      <ul>
-        <li>Podstawowa znajomość JavaScript, HTML oraz CSS.</li>
-        Knowledge of TypeScript is helpful, but not required.
-        <li>
-          własny komputer z kartą sieciową <br>
-          Trenerzy będą mieli zainstalowane systemy <a href="https://www.microsoft.com/pl-pl/windows" target="_blank"
-                                                       rel="nofollow">Windows 10</a>.
-        </li>
-      </ul>
-      <h4>Oprogramowanie</h4>
-      <p>Przygotowania do szkolenia przebiegnie sprawniej jeżeli uczestncy będą mieli już zainstalowane niezbędne
-        oprogramowanie:</p>
-      <ul>
-        <li>
-          Przeglądarka Chrome
-        </li>
-        <li>
-          NodeJS w wersji co najmniej 10.13.0 <br>
-          For more information on installing Node.js, see nodejs.org.
-        </li>
-        <li>
-          System kontroli wersji GIT oraz konto na GitHub <br>
-          Trener podczas szkolenia instalować będzie <a href="https://gitforwindows.org/" target="_blank"
-                                                        rel="nofollow">Git for Windows</a>
-        </li>
-        <li>
-          Edytor kodu <br>
-          Trenerzy będą używali edytorów <a href="https://www.jetbrains.com/" target="_blank"
-                                            rel="nofollow">JetBrains</a>.
-        </li>
-      </ul>
+        <section class="py-5">
+          <h3>Wymagania</h3>
+          <ul>
+            <li>
+              Podstawowa znajomość JavaScript, HTML oraz CSS.
+              <div class="font-size-sm text-muted">
+                Znajomość TypeScript będzie pomocna, jednak nie jest niezbędna.
+              </div>
+            </li>
+            <li>
+              Własny komputer z kartą sieciową
+              <div class="font-size-sm text-muted">
+                Trener będzie miał zainstalowane systemy <a href="//www.microsoft.com/pl-pl/windows" target="_blank"
+                                                            rel="nofollow" class="text-inherit">Windows 10</a>.
+              </div>
+            </li>
+          </ul>
 
-      <hr class="my-5">
+          <h4>Oprogramowanie</h4>
+          <p>Przygotowanie do szkolenia przebiegnie sprawniej jeżeli uczestncy będą mieli już zainstalowane niezbędne
+            narzędzia:</p>
+          <ul>
+            <li>
+              Przeglądarka <a href="//www.google.com/intl/pl/chrome/" target="_blank" rel="nofollow">Chrome</a>
+            </li>
+            <li>
+              <a href="//nodejs.org/" target="_blank" rel="nofollow">NodeJS</a> w wersji co najmniej 10.13.0
+            </li>
+            <li>
+              System kontroli wersji <a href="//git-scm.com/" target="_blank" rel="nofollow">GIT</a> oraz konto na
+              <a href="//github.com/" target="_blank" rel="nofollow">GitHub</a>
+              <div class="font-size-sm text-muted">
+                Trener podczas szkolenia instalować będzie <a href="//gitforwindows.org/" target="_blank"
+                                                              rel="nofollow" class="text-inherit">Git for Windows</a>.
+              </div>
+            </li>
+            <li>
+              Edytor kodu
+              <div class="font-size-sm text-muted">
+                Nasi trenerzy używają edytorów <a href="//www.jetbrains.com/" target="_blank"
+                                                  rel="nofollow" class="text-inherit">JetBrains</a>.
+              </div>
+            </li>
+          </ul>
+          <p class="mb-0">
+            Szkolenie rozpoczyna instalacja niezbędnych narzędzi, dlatego w przypadku ich braku uczestnicy
+            pobiorą, zainstalują i skonfigurują je wspólnie z trenerem.
+          </p>
+        </section>
 
-      <h3>Cel kursu</h3>
-      <p>
-        Celem kursu jest przedstawienie możliwościami frameworka Angular oraz zrozumienie jego fundamentalnych
-        elementów. Wszystko to odbywa się podczas wspólnego budowania pierwszej aplikacji internetowej - <abbr
-        title="Single Page Application">SPA</abbr>.
-      </p>
+        <hr>
 
-      <hr class="my-5">
+        <section class="py-5">
+          <h3>Cel kursu</h3>
+          <p class="mb-0">
+            Celem kursu jest przedstawienie możliwościami frameworka Angular oraz zrozumienie jego fundamentalnych
+            elementów. Wszystko to odbywa się podczas wspólnego budowania pierwszej aplikacji internetowej - <abbr
+            matTooltip="Single Page Application" data-original-title="Single Page Application">SPA</abbr>.
+          </p>
+        </section>
 
-      <h3>Plan szkolenia</h3>
-      <p>Orientacyjny plan kolejnych kroków kursu oraz elementów jakie będzie poznawał uczestnik podczas wspólnego
-        tworzenia swojej pierwszej aplikacji</p>
-      <h4>Dzień #1 <span class="ml-2 font-weight-normal font-size-sm text-muted">7h</span></h4>
-      <ul>
-        <li>
-          Przygotowanie do pracy <br>
-          instalacje (NodeJS, GIT, edytor, Angular CLI), zakładanie konta na GitHub
-        </li>
-        <li>Instlacja aplikacji Angular za pomocą Angular CLI</li>
-        <li>Upublicznienie aplikacji</li>
-        <li>Komponenty i ich wzajemna komunikacja</li>
-      </ul>
+        <hr>
 
-      <h4>Dzień #2 <span class="ml-2 font-weight-normal font-size-sm text-muted">7h</span></h4>
-      <ul>
-        <li>Dyrektywy</li>
-        <li>Potoki</li>
-        <li>Instalacja Angular Material i zastosowanie komponentów Material Design</li>
-        <li>Moduły funkcjonalne</li>
-      </ul>
+        <section class="py-5" id="plan">
+          <h3>Plan szkolenia</h3>
+          <p class="mb-5">Orientacyjny plan kolejnych kroków kursu oraz elementów jakie będzie poznawał uczestnik
+            podczas
+            wspólnego tworzenia aplikacji internetowej.</p>
+          <h4 class="mb-2">Dzień #1 <span class="ml-2 font-weight-normal font-size-sm text-muted">9:00 - 16:00</span>
+          </h4>
+          <ul>
+            <li>
+              Przygotowanie do pracy <br>
+              instalacje (NodeJS, GIT, edytor, Angular CLI), zakładanie konta na GitHub
+            </li>
+            <li>Instlacja aplikacji Angular za pomocą Angular CLI</li>
+            <li>Upublicznienie aplikacji</li>
+            <li>Komponenty i ich wzajemna komunikacja</li>
+          </ul>
 
-      <h4>Dzień #3 <span class="ml-2 font-weight-normal font-size-sm text-muted">7h</span></h4>
-      <ul>
-        <li>Usługi</li>
-        <li>Strumienie obserwowalne</li>
-        <li>Router Angulara</li>
-        <li>Formularze oparte na szablonach</li>
-      </ul>
+          <h4 class="mb-2">Dzień #2 <span class="ml-2 font-weight-normal font-size-sm text-muted">9:00 - 16:00</span>
+          </h4>
+          <ul>
+            <li>Dyrektywy</li>
+            <li>Potoki</li>
+            <li>Instalacja Angular Material i zastosowanie komponentów Material Design</li>
+            <li>Moduły funkcjonalne</li>
+          </ul>
 
-      <hr class="my-5">
+          <h4 class="mb-2">Dzień #3 <span class="ml-2 font-weight-normal font-size-sm text-muted">9:00 - 16:00</span>
+          </h4>
+          <ul class="mb-0">
+            <li>Usługi</li>
+            <li>Strumienie obserwowalne</li>
+            <li>Router Angulara</li>
+            <li>Formularze oparte na szablonach</li>
+          </ul>
+        </section>
 
-      <h3>Formularz zgłoszeniowy</h3>
+        <hr>
+
+        <section class="py-5 mb-5" id="form">
+          <h3>Formularz zgłoszeniowy</h3>
+          <p>Na podany w zgłoszeniu adres email zostaną przesłane dane do przelewu oraz w późniejszym czasie (najpóźniej
+            na tydzie przed rozpoczęciem kursu) dokładny adres sali w której odbędzie się szkolenie.</p>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <mat-form-field class="w-100">
+                <mat-label>Imię</mat-label>
+                <input matInput type="text" name="name">
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="w-100">
+                <mat-label>Nazwisko</mat-label>
+                <input matInput type="text" name="surname">
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="w-100">
+                <mat-label>Adres email</mat-label>
+                <input matInput type="email" name="email">
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field class="w-100">
+                <mat-label>Numer telefonu</mat-label>
+                <input matInput type="tel" name="tel">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <button type="button" mat-flat-button class="btn btn_primary">Wyślij zgłoszenie</button>
+        </section>
+      </main>
     </div>
   </div>
-</main>
+</div>
 
 <footer class="footer text-muted py-5">
   <div class="container d-flex align-items-center">
