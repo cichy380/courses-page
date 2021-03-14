@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularFirstAppComponent } from './components/courses/components/angular-first-app/angular-first-app.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { DialogInfoComponent } from './components/dialog-info/dialog-info.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DialogInfoComponent } from './components/dialog-info/dialog-info.compon
     AngularFirstAppComponent,
     HomeComponent,
     DialogInfoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

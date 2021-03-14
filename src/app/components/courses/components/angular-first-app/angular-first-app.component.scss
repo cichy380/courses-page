@@ -27,14 +27,3 @@
 abbr {
   text-decoration: underline dotted map-get($mat-gray, 300);
 }
-
-.footer {
-  background: linear-gradient(45deg, map-get($mat-gray, 50), map-get($mat-gray, 200));
-  font-size: $font-size-sm;
-}
-
-.footer__logo {
-  background: linear-gradient(45deg, map-get($mat-gray, 200), map-get($mat-gray, 500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
